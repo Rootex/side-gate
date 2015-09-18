@@ -31,7 +31,7 @@ class Database:
 
         except Exception as a:
             db.rollback()
-            print 'some errors occurred'
+            print('some errors occurred')
             raise a
         finally:
             db.close()
@@ -44,10 +44,10 @@ class Database:
             cursor.execute('''INSERT INTO model(question, category, answer, rating)
                                 VALUES(?,?,?,?)''', (question, category, answer, rating))
             db.commit()
-            print 'inserted question and info'
+            print('inserted question and info')
         except Exception as b:
             db.rollback()
-            print 'some error occurred'
+            print('some error occurred')
             raise b
         finally:
             db.close()
